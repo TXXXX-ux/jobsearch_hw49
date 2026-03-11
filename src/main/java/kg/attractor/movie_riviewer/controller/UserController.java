@@ -13,17 +13,10 @@ public class UserController {
     public UserController(UserRepository userRepository) {
         this.userRepository = userRepository;
 
-        this.userRepository.save(User.builder()
-                .id(1)
-                .name("Tyler")
-                .surname("Durden")
-                .email("soap@projectmayhem.com")
-                .accountType("APPLICANT")
-                .build());
+            this.userRepository.save(User.builder()
+                    .id(1).name("Тайлер").surname("Дерден").email("tyler@soap.com").accountType("APPLICANT").build());
+            
+            this.userRepository.save(User.builder()
+                    .id(2).name("Марла").surname("Зингер").email("marla@nightmare.com").accountType("EMPLOYER").build());
+        }
     }
-
-    @GetMapping("/users")
-    public List<User> getAllUsers() {
-        return userRepository.findAll();
-    }
-}
