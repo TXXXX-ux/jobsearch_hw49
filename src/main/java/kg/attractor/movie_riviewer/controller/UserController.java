@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 import kg.attractor.movie_riviewer.model.User;
 import java.util.List;
 
-@RestController // <-- ПРОВЕРЬ ЭТО
+@RestController
 public class UserController {
     private final UserRepository userRepository;
 
@@ -21,7 +21,7 @@ public class UserController {
                 .build());
     }
 
-    @GetMapping("/users") // <-- И ЭТО
+    @GetMapping("/users")
     public List<User> getUsers() {
         return userRepository.findAll();
     }
